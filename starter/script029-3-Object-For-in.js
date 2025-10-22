@@ -22,6 +22,12 @@ const mesFruits = {
 
 // Écris ton code ici
 
+for (const key in mesFruits) {
+    console.log(key)
+    console.log(mesFruits[key])
+}
+
+
 /*
 EXERCICE 2 :
 Parcours l'objet fruit pour afficher chacune de ses propriétés avec, pour chacune, sa valeur
