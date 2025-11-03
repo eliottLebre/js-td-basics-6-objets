@@ -40,3 +40,64 @@ du tableau (c'est comme cela qu'on calcule une moyenne).
 
 BONNE CHANCE 😀
 */
+let pourboirPaid = [];
+let facturesPaid = [];
+
+const factures= {
+    montants: [124, 48, 268, 180, 42],
+    pourboir(){
+        for (const montant of this.montants) {
+            if (montant < 50){
+                pourboirPaid.push(montant / 5);
+                facturesPaid.push(montant + montant / 5)
+            } else if (montant > 200){
+                pourboirPaid.push(montant / 10);
+                facturesPaid.push(montant + montant / 10)
+            } else {
+                pourboirPaid.push(montant / 100 * 15);
+                facturesPaid.push(montant + montant / 100 * 15)
+            }
+        }
+    }
+}
+
+factures.pourboir();
+console.log(pourboirPaid);
+console.log(facturesPaid);
+
+
+
+let pourboirPaidMark = [];
+let facturesPaidMark = [];
+const facturesMark= {
+    montants: [77, 375, 110, 45],
+    pourboir(){
+        for (const montant of this.montants) {
+            if (montant < 100){
+                pourboirPaidMark.push(montant / 5);
+                facturesPaidMark.push(montant + montant / 5)
+            } else if (montant > 300){
+                pourboirPaidMark.push(montant / 4);
+                facturesPaidMark.push(montant + montant / 4)
+            } else {
+                pourboirPaidMark.push(montant / 10);
+                facturesPaidMark.push(montant + montant / 10)
+            }
+        }
+    }
+}
+
+let avg = 0;
+function avgPourboir() {
+    for (const montant of facturesMark.montants) {
+        avg += montant;
+    }
+    avg = avg / facturesMark.montants.length;
+}
+
+facturesMark.pourboir();
+console.log(pourboirPaidMark);
+console.log(facturesPaidMark);
+
+avgPourboir();
+console.log(avg);

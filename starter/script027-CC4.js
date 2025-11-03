@@ -16,3 +16,25 @@ Rappel: BMI = poids / taille^2 = poids / (taille * taille). (poids en kg and tai
 
 BONNE CHANCE 😀
 */
+
+const Mark= {
+    nom: "Mark",
+    poids: 70,
+    taille: 190,
+    BMI(){
+        return this.poids / ((this.taille / 100) * (this.taille / 100))
+    }
+}
+const Jhon= {
+    nom: "Jhon",
+    poids: 90,
+    taille: 160,
+    BMI(){
+        return this.poids / ((this.taille / 100) * (this.taille / 100))
+    }
+}
+if (Mark.BMI() > Jhon.BMI()){
+    console.log(`Mark a le plus grand BMI ${Mark.BMI()}`);
+} else {
+    console.log(`Jhon a le plus grand BMI ${Jhon.BMI()}`);
+}

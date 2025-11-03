@@ -23,17 +23,21 @@ const aurora =
     nom :"Aurora",
     sante: 15,
     force: 25,
-    ex: 0,
+    xp: 0,
     decrire() {
-        console.log(`${this.nom} a ${this.sante} points de vie, ${this.force} en force et ${this.ex} points d'expérience`);
+        console.log(`${this.nom} a ${this.sante} points de vie, ${this.force} en force et ${this.xp} points d'expérience`);
     }
-};
+}
 
 console.log(aurora.nom);
 console.log(aurora["nom"]);
 
-console.log(`${aurora.nom} a ${aurora.sante} points de vie, ${aurora.force} en force et ${aurora.ex} points d'expérience`);
+console.log(`${aurora.nom} a ${aurora.sante} points de vie, ${aurora.force} en force et ${aurora.xp} points d'expérience`);
 
+console.log("Aurora apprend une nouvelle compétence");
+aurora.xp += 15;
 aurora.decrire();
 
-aurora.force += 10;
+console.log("Aurora est blessée par une flèche");
+aurora.sante -= 20;
+aurora.decrire();
